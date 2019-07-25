@@ -1,4 +1,5 @@
 FROM centos:7 AS build
+RUN yum install -y wget unzip
 WORKDIR /app
 COPY VERSION .
 COPY build.sh .
