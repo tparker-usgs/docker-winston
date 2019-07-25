@@ -1,7 +1,7 @@
 FROM centos:7 AS build
 WORKDIR /app
-COPY VERSION
-COPY build.sh
+COPY VERSION .
+COPY build.sh .
 RUN build.sh
 
 FROM openjdk:8
