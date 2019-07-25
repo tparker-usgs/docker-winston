@@ -9,6 +9,6 @@ RUN ls /app/
 
 FROM openjdk:8
 COPY --from=build /app/ /app/
-ENV CLASSPATH=/app/winston/lib
+ENV CLASSPATH=/app/winston/lib/winston.jar
 
 WORKDIR /winston
