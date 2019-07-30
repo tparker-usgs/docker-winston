@@ -4,11 +4,10 @@ WORKDIR /app
 COPY VERSION .
 COPY build.sh .
 RUN ./build.sh
-RUN echo TOMP SAYS HI
-RUN ls /app/
 
 FROM openjdk:8
-COPY --from=build /app/ /app/
+COPY --from=build /app/winston/ /app/winston/
 ENV CLASSPATH=/app/winston/lib/winston.jar
-
 WORKDIR /winston
+RUN chmod 777 .
+ENTRYPOINT ["java"]
